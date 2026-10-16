@@ -31,3 +31,10 @@ npm run preview
 - `src/router/index.js`：hash 路由；新增頁面時在此登記路由。
 
 GitHub Pages 的部署路徑已設為 `/practice-english/`，hash 路由可直接重新整理。部署時執行 `npm run build`，將 `dist/` 內容放到 `gh-pages` 分支根目錄，並保留 `.nojekyll`。
+
+## Supabase
+
+資料表、安全規則、100 個單字匯入與部署設定請參閱 [supabase/README.md](supabase/README.md)。
+連線設定透過本機 `.env.local` 或 GitHub Actions Secrets 提供，不寫入原始碼。
+`npm run test:db` 使用本機 PostgreSQL WASM 驗證資料表與 RLS，不會連線到正式資料庫。
+啟用 GitHub Actions 部署後，不再手動推送 `dist/` 到 `gh-pages`。
