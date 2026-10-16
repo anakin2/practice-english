@@ -41,6 +41,7 @@ jobs:
             sb_publishable_*) ;;
             *) echo 'Use a public sb_publishable_ key, never a secret or service-role key'; exit 1 ;;
           esac
+          node scripts/check-supabase.mjs
           npm run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
