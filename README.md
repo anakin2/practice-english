@@ -21,3 +21,13 @@ npm run preview
 產出檔案位於 `dist/`，可部署到靜態網站服務。
 
 發音透過 Web Speech API，無須 API 金鑰。需使用支援語音合成的瀏覽器，並安裝可用的英文語音；音色、可用性及是否需要網路依瀏覽器及作業系統而異。音標以美式英文為主；不同地區發音可能不同。字型服務無法連線時會使用系統備用字型。
+
+## 專案結構
+
+- `src/App.vue`：共用版面與路由出口。
+- `src/views/VocabularyView.vue`：單字練習頁。
+- `src/components/`：頁首、頁尾與單字卡。
+- `src/composables/usePronunciation.js`：語音播放狀態與清理。
+- `src/router/index.js`：hash 路由；新增頁面時在此登記路由。
+
+GitHub Pages 的部署路徑已設為 `/practice-english/`，hash 路由可直接重新整理。部署時執行 `npm run build`，將 `dist/` 內容放到 `gh-pages` 分支根目錄，並保留 `.nojekyll`。
